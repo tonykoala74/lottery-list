@@ -2,46 +2,50 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>115年2月6日得獎名單一覽表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>115年2月6日得獎名單</title>
     <style>
-        /* 基礎排版設定 */
         body, html { 
             margin: 0; 
             padding: 0; 
             height: 100%; 
-            font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif;
-            background-color: #f4f4f4;
+            font-family: "Microsoft JhengHei", sans-serif;
+            background-color: #ffffff;
             display: flex;
             flex-direction: column;
             overflow: hidden;
         }
 
-        /* 標題列樣式 */
         .header {
             background-color: #d32f2f;
             color: white;
             text-align: center;
-            padding: 15px 10px;
+            padding: 10px 5px; /* 縮小手機上的間距 */
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             z-index: 10;
         }
 
+        /* 響應式標題：在手機上自動縮小字體 */
         .header h1 {
             margin: 0;
-            font-size: 24px;
-            letter-spacing: 2px;
+            font-size: 5.5vw; /* 根據螢幕寬度自動調整字體大小 */
+            letter-spacing: 1px;
+        }
+
+        @media (min-width: 768px) {
+            .header h1 { font-size: 24px; } /* 電腦版維持固定大小 */
         }
 
         .header p {
-            margin: 5px 0 0 0;
-            font-size: 14px;
-            opacity: 0.9;
+            margin: 3px 0 0 0;
+            font-size: 12px;
+            opacity: 0.8;
         }
 
         .content {
             flex-grow: 1;
             width: 100%;
+            -webkit-overflow-scrolling: touch; /* 讓手機滑動更順暢 */
         }
 
         iframe { 
@@ -51,19 +55,16 @@
         }
     </style>
     <script>
-        // 設定在 110 到 130 秒之間隨機重新整理一次 (平均約 2 分鐘)
-        // 頻率加快會讓觀眾更即時看到中獎名單
+        // 每 2 分鐘隨機刷新一次
         var randomTime = Math.floor(Math.random() * (130 - 110 + 1) + 110) * 1000;
-        setTimeout(function(){
-            location.reload();
-        }, randomTime);
+        setTimeout(function(){ location.reload(); }, randomTime);
     </script>
 </head>
 <body>
 
     <div class="header">
         <h1>115年2月6日得獎名單一覽表</h1>
-        <p>● 網頁每 2 分鐘會自動更新一次 ●</p>
+        <p>● 每 2 分鐘自動更新 ●</p>
     </div>
 
     <div class="content">
