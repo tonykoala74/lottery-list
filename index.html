@@ -20,24 +20,37 @@
             background-color: #d32f2f;
             color: white;
             text-align: center;
-            padding: 10px 5px; /* 縮小手機上的間距 */
+            padding: 12px 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             z-index: 10;
         }
 
-        /* 響應式標題：在手機上自動縮小字體 */
         .header h1 {
             margin: 0;
-            font-size: 5.5vw; /* 根據螢幕寬度自動調整字體大小 */
+            font-size: 5.5vw;
             letter-spacing: 1px;
         }
 
-        @media (min-width: 768px) {
-            .header h1 { font-size: 24px; } /* 電腦版維持固定大小 */
+        /* 新增的表頭文字樣式 */
+        .notice-text {
+            background-color: #ffeb3b; /* 黃色底色更醒目 */
+            color: #b71c1c; /* 深紅色字體 */
+            margin: 8px 0 0 0;
+            padding: 5px;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 4px;
+            display: inline-block;
+            width: 90%;
         }
 
-        .header p {
-            margin: 3px 0 0 0;
+        @media (min-width: 768px) {
+            .header h1 { font-size: 28px; }
+            .notice-text { font-size: 18px; width: auto; padding: 5px 20px; }
+        }
+
+        .header p.update-info {
+            margin: 5px 0 0 0;
             font-size: 12px;
             opacity: 0.8;
         }
@@ -45,7 +58,7 @@
         .content {
             flex-grow: 1;
             width: 100%;
-            -webkit-overflow-scrolling: touch; /* 讓手機滑動更順暢 */
+            -webkit-overflow-scrolling: touch;
         }
 
         iframe { 
@@ -55,7 +68,15 @@
         }
     </style>
     <script>
-        // 每 2 分鐘隨機刷新一次
+        // 1. 確認視窗功能：確保使用者進入時只跳出一次
+        window.onload = function() {
+            if (!sessionStorage.getItem('notified')) {
+                alert("【重要通知】\n統一於2月6日15時分發抽獎品，活動中不發放獎品。");
+                sessionStorage.setItem('notified', 'true');
+            }
+        };
+
+        // 2. 每 2 分鐘隨機刷新一次
         var randomTime = Math.floor(Math.random() * (130 - 110 + 1) + 110) * 1000;
         setTimeout(function(){ location.reload(); }, randomTime);
     </script>
@@ -64,7 +85,10 @@
 
     <div class="header">
         <h1>115年2月6日得獎名單一覽表</h1>
-        <p>● 每 2 分鐘自動更新 ●</p>
+        <div class="notice-text">
+            📢 統一於2月6日15時分發抽獎品，活動中不發放獎品
+        </div>
+        <p class="update-info">● 網頁每 2 分鐘自動更新 ●</p>
     </div>
 
     <div class="content">
