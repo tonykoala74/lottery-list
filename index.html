@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>即時中獎名單</title>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #000; }
+        iframe { width: 100vw; height: 100vh; border: none; }
+    </style>
+    <script>
+        // 設定在 290 到 310 秒之間隨機重新整理一次 (約 5 分鐘)
+        var randomTime = Math.floor(Math.random() * (310 - 290 + 1) + 290) * 1000;
+        setTimeout(function(){
+            location.reload();
+        }, randomTime);
+    </script>
+</head>
+<body>
+    <iframe src="你的B試算表發佈連結&rm=minimal&chrome=false"></iframe>
+</body>
+</html>
