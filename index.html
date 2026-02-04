@@ -2,22 +2,76 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>115年2月6日中獎名單即時公佈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>115年2月6日得獎名單一覽表</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #ffffff; }
-        iframe { width: 100vw; height: 100vh; border: none; }
+        /* 基礎排版設定 */
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* 標題列樣式 */
+        .header {
+            background-color: #d32f2f;
+            color: white;
+            text-align: center;
+            padding: 15px 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+
+        .header p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .content {
+            flex-grow: 1;
+            width: 100%;
+        }
+
+        iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: none;
+        }
     </style>
     <script>
-        // 設定在 290 到 310 秒之間隨機重新整理一次 (約 5 分鐘)
-        var randomTime = Math.floor(Math.random() * (310 - 290 + 1) + 290) * 1000;
+        // 設定在 110 到 130 秒之間隨機重新整理一次 (平均約 2 分鐘)
+        // 頻率加快會讓觀眾更即時看到中獎名單
+        var randomTime = Math.floor(Math.random() * (130 - 110 + 1) + 110) * 1000;
         setTimeout(function(){
             location.reload();
         }, randomTime);
     </script>
 </head>
 <body>
-    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTsugNxRQ_dCPhgm1UISDVb9qNbLn9-GsOoSYEsmUHhhSIwcu-g2Rxqu_n2GgK7BwoEJtjFo3gLOXhV/pubhtml?widget=false&headers=false&chrome=false&rm=minimal"></iframe>
+
+    <div class="header">
+        <h1>115年2月6日得獎名單一覽表</h1>
+        <p>● 網頁每 2 分鐘會自動更新一次 ●</p>
+    </div>
+
+    <div class="content">
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTsugNxRQ_dCPhgm1UISDVb9qNbLn9-GsOoSYEsmUHhhSIwcu-g2Rxqu_n2GgK7BwoEJtjFo3gLOXhV/pubhtml?widget=false&headers=false&chrome=false&rm=minimal"></iframe>
+    </div>
+
 </body>
 </html>
+
 
 
