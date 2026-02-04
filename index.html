@@ -9,7 +9,6 @@
     </style>
     <script>
         // 設定在 290 到 310 秒之間隨機重新整理一次 (約 5 分鐘)
-        // 這樣可以分散大量觀眾同時對 Google 伺服器造成壓力
         var randomTime = Math.floor(Math.random() * (310 - 290 + 1) + 290) * 1000;
         setTimeout(function(){
             location.reload();
@@ -17,7 +16,8 @@
     </script>
 </head>
 <body>
-    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTsugNxRQ_dCPhgm1UISDVb9qNbLn9-GsOoSYEsmUHhhSIwcu-g2Rxqu_n2GgK7BwoEJtjFo3gLOXhV/pubhtml"></iframe>
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTsugNxRQ_dCPhgm1UISDVb9qNbLn9-GsOoSYEsmUHhhSIwcu-g2Rxqu_n2GgK7BwoEJtjFo3gLOXhV/pubhtml?widget=false&headers=false&chrome=false&rm=minimal"></iframe>
 </body>
 </html>
+
 
