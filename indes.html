@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>115年2月6日中獎名單即時公佈</title>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #ffffff; }
+        iframe { width: 100vw; height: 100vh; border: none; }
+    </style>
+    <script>
+        // 設定在 290 到 310 秒之間隨機重新整理一次 (約 5 分鐘)
+        // 這樣可以分散大量觀眾同時對 Google 伺服器造成壓力
+        var randomTime = Math.floor(Math.random() * (310 - 290 + 1) + 290) * 1000;
+        setTimeout(function(){
+            location.reload();
+        }, randomTime);
+    </script>
+</head>
+<body>
+    <iframe src="https://docs.google.com/spreadsheets/d/1x8yYl8DT5pBn4iF3V1kv-DRPMDx0fEuGu4VtuL1ye24/pubhtml?widget=false&headers=false&chrome=false&rm=minimal"></iframe>
+</body>
+</html>
