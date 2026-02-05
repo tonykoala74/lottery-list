@@ -88,7 +88,7 @@
 
             // 2. 確認視窗功能：確保使用者進入時只跳出一次
             if (!sessionStorage.getItem('notified')) {
-                alert("【重要通知】\n統一於2月6日15時分發抽獎品，活動中不發放獎品。");
+                alert("【重要通知】\n統一於2月6日15時分發獎品，活動中不兌獎。");
                 sessionStorage.setItem('notified', 'true');
             }
         };
@@ -104,7 +104,7 @@
         <h1>115年2月6日得獎名單一覽表</h1>
         
         <div class="notice-text">
-            📢 統一於2月6日15時分發抽獎品，活動中不發放獎品
+            📢 統一於2月6日15時分發獎品，活動中不兌獎
         </div>
 
         <p class="update-info">
@@ -119,3 +119,4 @@
 
 </body>
 </html>
+
